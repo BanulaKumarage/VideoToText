@@ -115,8 +115,7 @@ class Recorder():
                 self.duration += 1/self.fps
                 if (video_frame is None):
                     print("Video frame is none")
-                gray = cv2.cvtColor(video_frame, cv2.COLOR_BGR2GRAY)
-                cv2.imshow('video_frame', gray)
+                cv2.imshow('video_frame', video_frame)
                 cv2.waitKey(1)
 
                 while (self.duration - self.recorder.audio_thread.duration >= 0.2 and self.recorder.audio_thread.open):
