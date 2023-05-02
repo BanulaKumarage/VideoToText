@@ -104,6 +104,7 @@ class Recorder():
         def record(self):
             "Video starts being recorded"
             counter = 1
+            print ("Inside the Video recording thread")
             while self.open:
                 ret, video_frame = self.video_cap.read()
                 if not ret:
@@ -167,6 +168,7 @@ class Recorder():
 
         def record(self):
             "Audio starts being recorded"
+            print ("Inside the Audio recording thread")
             self.stream.start_stream()
             t_start = time.time_ns()
             while self.open:
