@@ -128,11 +128,11 @@ class Recorder():
             self.video_out = None
 
         def stop(self):
-            "Finishes the video recording therefore the thread too"
+            print("Finishes the video recording therefore the thread too")
             self.open = False
 
         def start(self):
-            "Launches the video recording function using a thread"
+            print("Launches the video recording function using a thread")
             self.thread = threading.Thread(target=self.record)
             self.thread.start()
 
@@ -146,7 +146,7 @@ class Recorder():
             print(f"recorded fps {str(recorded_fps)}")
 
     class AudioRecorder():
-        "Audio class based on pyAudio and Wave"
+        print("Audio class based on pyAudio and Wave")
 
         def __init__(self, recorder, filename, rate=44100, fpb=1024, channels=1, audio_index=0):
             self.recorder = recorder
@@ -190,16 +190,16 @@ class Recorder():
             self.audio.terminate()
 
         def stop(self):
-            "Finishes the audio recording therefore the thread too"
+            print("Finishes the audio recording therefore the thread too")
             self.open = False
 
         def start(self):
-            "Launches the audio recording function using a thread"
+            print("Launches the audio recording function using a thread")
             self.thread = threading.Thread(target=self.record)
             self.thread.start()
 
         def saveAudio(self):
-            # Save Audio File
+            print("Save Audio File")
             waveFile = wave.open(self.audio_filename, 'wb')
             waveFile.setnchannels(self.channels)
             waveFile.setsampwidth(self.audio.get_sample_size(self.format))
